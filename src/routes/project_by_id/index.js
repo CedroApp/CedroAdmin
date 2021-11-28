@@ -1,20 +1,19 @@
 import './form_by_id.css'
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import api from '../../api/api'
 import ProjectCard from '../../components/project_card'
 import FormCard from '../../components/form_card'
 
 export default function ProjectByID() {
-    let navigate = useNavigate()
     let params = useParams()
 
     const projectID = params.projectID
     const [project, setProject] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const getProject = () => {
+    useEffect(() => {
         api.get(`/getprojectbyid/${projectID}`).then((res) => {
             console.log(res.data)
             setProject(res.data)
@@ -23,15 +22,18 @@ export default function ProjectByID() {
         ).catch(() => {
             console.log("OI")
         })
-    }
-
-    useEffect(() => {
-        getProject()
     }, [])
 
     const handleRemove = (id) => {
         api.delete(`/deleteform/${id}`).then(()=>{
-            getProject()
+            api.get(`/getprojectbyid/${projectID}`).then((res) => {
+                console.log(res.data)
+                setProject(res.data)
+                setLoading(false)
+            }
+            ).catch(() => {
+                console.log("OI")
+            })
         }).catch(()=>{
             console.log("OI")
         })

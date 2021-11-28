@@ -18,7 +18,7 @@ export default function SendProjects() {
             console.log(res)
             navigate('/projects')
         }).catch(()=> console.log("oi"))
-    },[])
+    },[code, navigate])
 
     return(
         <div className="container">

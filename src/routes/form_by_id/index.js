@@ -14,7 +14,7 @@ export default function Forms() {
     const [form, setForm] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const getForm = () => {
+    useEffect(() => {
         api.get(`/getformbyid/${formID}`).then((res) => {
             console.log(res.data)
             setForm(res.data)
@@ -23,15 +23,18 @@ export default function Forms() {
         ).catch(() => {
             console.log("OI")
         })
-    }
-
-    useEffect(() => {
-        getForm()
-    }, [])
+    }, [formID])
 
     const handleRemove = (id) => {
         api.delete(`/deletequestion/${id}`).then(()=>{
-            getForm()
+            api.get(`/getformbyid/${formID}`).then((res) => {
+                console.log(res.data)
+                setForm(res.data)
+                setLoading(false)
+            }
+            ).catch(() => {
+                console.log("OI")
+            })
         }).catch(()=>{
             console.log("OI")
         })

@@ -25,7 +25,7 @@ export default function EditMultipleChoice() {
       setLoading(false)
       setFormID(res.data.form)
     })
-  }, [])
+  }, [questionID])
 
   const handlePush = () => {
     let optionsArray = options

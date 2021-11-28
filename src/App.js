@@ -15,7 +15,7 @@ function App() {
       navigate('/login')
     }
     setLoggedUser(getUserInfo())
-  }, [])
+  }, [navigate])
 
   const handleLogout = () => {
     localStorage.removeItem('token')

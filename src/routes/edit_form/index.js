@@ -16,21 +16,20 @@ export default function EditForm() {
   const [error, setError] = useState('');
   const [ loading, setLoading ] = useState(true)
 
-  const getForm = () => {
-    api.get(`/getformbyid/${formID}`).then((res) => {
-      console.log(res.data)
-      setName(res.data.name)
-      setDescription(res.data.description)
-      setLoading(false)
-    }
-    ).catch(() => {
-      console.log("OI")
-    })
-  }
-
   useEffect(() => {
+    const getForm = () => {
+      api.get(`/getformbyid/${formID}`).then((res) => {
+        console.log(res.data)
+        setName(res.data.name)
+        setDescription(res.data.description)
+        setLoading(false)
+      }
+      ).catch(() => {
+        console.log("OI")
+      })
+    }
     getForm()
-  }, [])
+  }, [formID])
 
   const validateData = () => {
     if (name.length < 5) {

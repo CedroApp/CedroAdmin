@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./create_project.css"
 import api from "../../api/api";
 
 export default function CreateProject() {
   let navigate = useNavigate()
-  let params = useParams()
-  const projectID = params.projectID
 
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState('');

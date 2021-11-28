@@ -21,7 +21,7 @@ export default function EditText() {
       setLoading(false)
       setFormID(res.data.form)
     })
-  }, [])
+  }, [questionID])
 
   const validateData = () => {
     if (title.length < 5) {

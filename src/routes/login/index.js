@@ -18,7 +18,7 @@ export default function Login() {
     if(token != null){
       navigate('/')
     }
-  }, [])
+  }, [navigate])
 
   const validateData = () =>{
     if(!validator.isEmail(email)){
