@@ -1,0 +1,11 @@
+.options-create-container{
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input-distance{
+    margin:1rem;
+}

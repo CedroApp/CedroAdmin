@@ -1,0 +1,22 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+.navbar-container{
+  width: 100%;
+  max-width: 1400px;
+  height: 10vh;
+  border-bottom: #000 solid 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.link{
+  text-decoration: none;
+  font-size: 1.8rem;
+  margin: 1rem;
+  color: #000;
+}

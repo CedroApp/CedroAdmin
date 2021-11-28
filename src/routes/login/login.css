@@ -1,0 +1,24 @@
+.all-screen-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
+.login-container{
+    border: #000 solid 1px;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 40vh;
+    padding: 5vh 5vw;
+}
+.input{
+    padding: 0.7rem;
+}
+.submit-button{
+    padding: 1vh;
+    border-radius: 10px;
+    background-color: #212121;
+    color:#FFF;
+    cursor: pointer;
+}

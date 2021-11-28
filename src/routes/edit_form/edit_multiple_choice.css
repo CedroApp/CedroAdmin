@@ -1,0 +1,28 @@
+.create-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 5vw;
+    width: 60%;
+}
+.input{
+    padding: 0.7rem;
+    width: 50%;
+}
+.submit-button{
+    width: 10vw;
+    margin: 1rem;
+    padding: 1vh;
+    border-radius: 10px;
+    background-color: #212121;
+    color:#FFF;
+    cursor: pointer;
+}
+
+.option-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
