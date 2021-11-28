@@ -22,7 +22,7 @@ export default function ProjectByID() {
         ).catch(() => {
             console.log("OI")
         })
-    }, [])
+    }, [projectID])
 
     const handleRemove = (id) => {
         api.delete(`/deleteform/${id}`).then(()=>{
