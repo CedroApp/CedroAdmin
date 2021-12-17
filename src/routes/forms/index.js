@@ -31,7 +31,6 @@ export default function Forms() {
     } else{
         return (
             <div className="container">
-                <Link to='/forms/create' className="link"> Criar Form </Link>
                 <div className="questions-container">
                     {
                         forms.map((form)=>{

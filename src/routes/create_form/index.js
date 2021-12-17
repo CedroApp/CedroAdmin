@@ -11,7 +11,7 @@ export default function CreateForm() {
 
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState('');
-  const [description, setDescription] = useState(['', '']);
+  const [description, setDescription] = useState(['']);
   const [descriptionError, setDescriptionError] = useState('');
   const [error, setError] = useState('');
 
